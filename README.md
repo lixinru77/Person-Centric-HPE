@@ -9,22 +9,20 @@ Please install the required environment using Conda:
 conda env create -f vir_env.yml
 ```
 
-Datasets (数据集)We use both a public benchmark and a custom validation dataset: https://github.com/zylofor/STC-HSANet  
-Our Custom Validation Dataset (Different Scenes): https://pan.baidu.com/s/1EpnGoZXsnxbKQx7aMzEovw  
+Datasets We use both a public benchmark and a custom validation dataset: [Public Benchmark Dataset: STC-HSANet GitHub](https://github.com/zylofor/STC-HSANet)  
+Our Custom Validation Dataset (Different Scenes): [Baidu Netdisk](https://pan.baidu.com/s/1EpnGoZXsnxbKQx7aMzEovw) 
 
 1. 4D FFT Processing:
 First, process the raw .npy radar data using 4D FFT:  
 
 ```
 python process_iwr1843
-
 ```
 
 2. Visual Ground Truth (GT) Generation:
 Next, generate the visual labels (GT):
 ```
 python video2frame.py
-
 ```
 
 4. Dataset Structure Alignment:
@@ -50,7 +48,7 @@ Person-Centric/data/
 └── ...
 ```
 
-🚀 Training (模型训练)
+🚀 Training 
 To train the model, run the following command[cite: 1]:
 ```
 python main.py --config config.yaml --dir [Your_Output_Directory_Path]
@@ -59,10 +57,10 @@ python main.py --config config.yaml --dir [Your_Output_Directory_Path]
 (Please replace [Your_Output_Directory_Path] with your actual output path[cite: 1].)
 
 
-📈 Evaluation (模型评估)
+📈 Evaluation 
 To evaluate the trained model, use the following command[cite: 1]:
 ```
-python main.py --dir ./Person-Centric-HPE/output/model_best.pth --config config.yaml --eval --visDir False --keypoints True
+python main.py --dir output --config config.yaml --eval --visDir False --keypoints True
 ```
 
 Evaluation Notes[cite: 1]:
